@@ -1,9 +1,13 @@
+import 'leaflet/dist/leaflet.css';
 import React, { useState } from 'react'; // Added useState
 import Navbar from './components/navbar';
 import Hero from './components/hero';
 import Features from './components/features';
 import Footer from './components/Footer';
 import AnalyzePage from './components/analyze/AnalyzePage'; // Added import
+
+
+import MapSection from './components/analyze/MapSection';
 
 const App = () => {
   // 1. Logic to track which page to show
@@ -13,7 +17,15 @@ const App = () => {
   if (showDashboard) {
     return <AnalyzePage onBack={() => setShowDashboard(false)} />;
   }
-
+// const testData = {
+//   lat: 29.6139,        // Coordinates for New Delhi
+//   lng: 77.2090,
+//   score: 82,
+//   riskLevel: 'High',
+//   aqi: 210,
+//   noiseLevel: 75,
+//   mitigationTip: "Use noise-reducing barriers and schedule heavy machinery for mid-day."
+// };
   return (
     <div className="relative min-h-screen w-full text-white bg-slate-950">
       {/* Background settings remain exactly as you had them */}
@@ -31,7 +43,10 @@ const App = () => {
           <Navbar onGetStarted={() => setShowDashboard(true)} />
           <Hero onAnalyze={() => setShowDashboard(true)} />
         </div>
-        
+
+        {/* <div className="container mx-auto px-4">
+          <MapSection data={null} />
+        </div> */}
         <Features />
         <Footer />
       </div>

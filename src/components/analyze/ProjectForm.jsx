@@ -103,6 +103,14 @@ export default function ProjectForm({ onAnalyze, projectName, hideHeader = false
         </button>
       </form>
 
+<button   
+  type="button" 
+  onClick={() => onAnalyze({ lat: 28.4595, lng: 77.0266 })} // Pass dummy or real coords
+  className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-5 rounded-2xl mt-10 ..."
+>
+  ⚡ Analyze Impact
+</button> 
+
       {/* --- CUSTOM ADD EQUIPMENT MODAL --- */}
       {showModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/70 backdrop-blur-sm transition-all">
